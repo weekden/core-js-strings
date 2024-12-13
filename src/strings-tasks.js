@@ -244,12 +244,10 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  const str = '';
   const addZero = (phar) => {
-    return phar < 10 ? str.concat('0', phar) : phar;
+    return phar < 10 ? phar.toString().padStart(2, '0') : phar;
   };
-  const arr = [addZero(minutes), addZero(seconds)];
-  return arr.join(':');
+  return `${addZero(minutes)}:${addZero(seconds)}`;
 }
 
 /**
